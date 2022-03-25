@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import type { NextPage } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 
 
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ test }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log('text', test);
   return (
     <div className="container">
       <Head>
@@ -44,4 +45,13 @@ const Home: NextPage = () => {
   )
 }
 
+export const getStaticProps: GetStaticProps = async (context) => {
+  let test = await fetch('http://api:8005/expenses');
+  test = await test.json();
+  return {
+    props: {
+      test
+    }
+  }
+}
 export default Home
