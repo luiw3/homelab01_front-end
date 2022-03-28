@@ -11,7 +11,7 @@ const Navigation = () => {
                 Cryptos
             </Link>
             <Link to="goals" className="basis-full">
-                Goals
+                Goals!
             </Link>
             <Link to="expenses" className="basis-full">
                 Expenses
