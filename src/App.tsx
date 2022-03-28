@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 import './App.css';
+import { BaseLayout } from './layout/layout';
+import { Cryptos, Dashboard, Expenses, Goals, Login, Register } from './pages';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload. aadsaaaaaaaaaaaaaaa
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='h-screen w-screen bg-slate-400'>
+      <Router>
+        <Routes>
+          <Route path='/login' element={ <Login />} />
+          <Route path="/register" element={<Register />}/>
+          <Route path="/" element={<BaseLayout/>}>
+                <Route path='dashboard' element={<Dashboard />} />
+                <Route path='cryptos' element={<Cryptos />} />
+                <Route path='goals' element={<Goals />} />
+                <Route path='expenses' element={<Expenses />} />
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
