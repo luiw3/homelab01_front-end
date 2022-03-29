@@ -7,7 +7,7 @@ export const Login = () => {
     const navigate = useNavigate();
 
     const doLogin = () => {
-        navigate('/', {
+        navigate('/dashboard', {
             state: {
                 logged: true
             }
