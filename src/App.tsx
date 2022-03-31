@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 import './App.css';
 import { BaseLayout } from './layout/layout';
-import { Cryptos, Dashboard, Expenses, Goals, Login, Register } from './pages';
+import { Cryptos, Dashboard, Expenses, Goals, Login, Profile, Register } from './pages';
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
                 <Route path='cryptos' element={<Cryptos />} />
                 <Route path='goals' element={<Goals />} />
                 <Route path='expenses' element={<Expenses />} />
+                <Route path='profile' element={<Profile />} />
           </Route>
         </Routes>
       </Router>

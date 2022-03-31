@@ -16,11 +16,11 @@ export const BaseLayout = () => {
                 <div className="row-span-6 col-span-1 justify-self-start max-w-xs hidden lg:block" style={{ border: "1px solid black" }}>
                     <Navigation />
                 </div>
-                <div className="row-span-6 lg:col-span-9 col-span-10" style={{ border: "1px solid black" }}>
+                <section className="row-span-6 lg:col-span-9 col-span-10" style={{ border: "1px solid black" }}>
                     <Main>
                         <Outlet />
                     </Main>
-                </div>
+                </section>
             </div>
         </div >
     )
