@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Navigation = () => {
     return (
         <nav className="flex flex-row flex-wrap justify-between h-full">
-            <NavLink to="dashboard" className={({ isActive }) => (isActive ? "bg-slate-600" : "bg-white") + ' basis-full group'} >
+            <NavLink to="/" className={({ isActive }) => (isActive ? "bg-slate-600" : "bg-white") + ' basis-full group'} >
                 <div className="h-full flex flex-col items-center justify-center transition group-hover:text-red-600">
                     <FaChartPie size='4em' className="group-hover:-translate-y-1 group-hover:scale-110 duration-300" />
                     <span className="duration-1000">profile</span>

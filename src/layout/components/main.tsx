@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 const Main = (props: {children: ReactNode}) => {
 
     return (
-        <main>
+        <main className="h-full">
             {props.children}
         </main>
     )

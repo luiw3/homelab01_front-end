@@ -4,9 +4,8 @@ export interface IGoal {
     id: string;
     goal: string;
     amountNeeded: number;
-    fiatValue: number;
     totalSaved: number;
-    limitDate: Date
+    targetDate: Date
 }
 
 export type IGoalWithUser = IGoal & {
