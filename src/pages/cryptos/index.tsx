@@ -22,7 +22,6 @@ export const Cryptos = () => {
     return (
             <TableComponent items={items}
             renderItem={(items) => {
-                console.log('items1',items)
                 return (
                     <>
                         <td className="border px-8 py-4">{items.amount} </td>

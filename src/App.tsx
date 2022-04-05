@@ -7,7 +7,7 @@ import { Cryptos, Dashboard, Expenses, Goals, Login, Profile, Register } from '.
 function App() {
 
   return (
-    <div className='h-screen w-screen bg-slate-400'>
+    <div className='h-screen w-screen bg-slate-900'>
       <Router>
         <Routes>
           <Route path='/login' element={ <Login />} />
