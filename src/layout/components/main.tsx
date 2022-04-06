@@ -1,5 +1,6 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Breadcrumb from "./breadcrumb";
 
 
 const Main = (props: {children: ReactNode}) => {
@@ -11,14 +12,12 @@ const Main = (props: {children: ReactNode}) => {
     },[loc.pathname])
 
     return (
-        <main className="h-full">
-            <header className="w-full h-[9%] border-solid border-2 border-sky-500">
-                {state}
-            </header>
+        <section className="h-full row-span-6 lg:col-span-9 col-span-10 bg-slate-600 lg:rounded-lg">
+            <Breadcrumb currentPath={state} showAction={state !== 'dashboard'}/>
             <section className="h-[91%]">
                 {props.children}
             </section>
-        </main>
+        </section>
     )
 }
 
