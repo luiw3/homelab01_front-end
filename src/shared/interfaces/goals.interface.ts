@@ -5,7 +5,9 @@ export interface IGoal {
     goal: string;
     amountNeeded: number;
     totalSaved: number;
-    targetDate: Date
+    targetDate: Date;
+    parent?: IGoal,
+    children?: IGoal
 }
 
 export type IGoalWithUser = IGoal & {
