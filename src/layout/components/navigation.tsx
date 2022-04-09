@@ -13,19 +13,19 @@ const Navigation = () => {
                 </div>
             </NavLink>
             <NavLink to="expenses" className={({ isActive }) => (isActive ? "bg-zinc-800 text-white" : "text-blue-900") + ' basis-full group rounded-br-lg'}>
-            <div className="h-full flex flex-col items-center justify-center transition group-hover:text-white group-hover:bg-zinc-600">
+                <div className="h-full flex flex-col items-center justify-center transition group-hover:text-white group-hover:bg-zinc-600">
                     <FaMoneyBillAlt size='4em' className="group-hover:-translate-y-1 group-hover:scale-110 group-hover:-rotate-6 duration-300" />
                     expenses
                 </div>
             </NavLink>
             <NavLink to="cryptos" className={({ isActive }) => (isActive ? "bg-zinc-800 text-white" : "text-blue-900") + ' basis-full group'}>
                 <div className="h-full flex flex-col items-center justify-center transition group-hover:text-white group-hover:bg-zinc-600">
-                        <FaBtc size='4em' className="group-hover:-translate-y-1 group-hover:scale-110 group-hover:-rotate-6 duration-300 "/>
-                        cryptos
+                    <FaBtc size='4em' className="group-hover:-translate-y-1 group-hover:scale-110 group-hover:-rotate-6 duration-300 " />
+                    cryptos
                 </div>
             </NavLink>
             <NavLink to="goals" className={({ isActive }) => (isActive ? "bg-zinc-800 text-white" : "text-blue-900") + ' basis-full group'}>
-            <div className="h-full flex flex-col items-center justify-center transition group-hover:text-white group-hover:bg-zinc-600">
+                <div className="h-full flex flex-col items-center justify-center transition group-hover:text-white group-hover:bg-zinc-600">
                     <FaCheckSquare size='4em' className="group-hover:-translate-y-1 group-hover:scale-110 group-hover:-rotate-6 duration-300" />
                     <span >
                         goals

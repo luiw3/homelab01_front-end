@@ -3,6 +3,7 @@ import { Column, useTable } from 'react-table';
 import { TableComponent } from '../../shared/components';
 import { EScreens } from '../../shared/enum';
 import { ICrypto } from '../../shared/interfaces';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 export const Cryptos = () => {
     let data: Array<ICrypto> = [{
@@ -18,23 +19,35 @@ export const Cryptos = () => {
         token: 'EYH',
         purchasingDate: new Date(),
         id: 'b'
+    },
+    {
+        fiatValue: 1553,
+        amount: 1,
+        token: 'VET',
+        purchasingDate: new Date(),
+        id: 'c'
     }]
 
-        let columns: Array<Column<ICrypto>> = [{
-            Header: 'Amount',
-            accessor: 'amount'
-        },
-        {
-            Header: 'Fiat Value',
-            accessor: 'fiatValue'
-        },
+        let columns: Array<Column<ICrypto>> = [
         {
             Header: 'Token',
             accessor: 'token'
         },
         {
+            Header: 'Fiat Value',
+            accessor: row  => "R$" + row.fiatValue
+        },
+        {
+            Header: 'Amount',
+            accessor: 'amount'
+        },
+        {
             Header: 'Purchasing Date',
             accessor: row => row.purchasingDate.toLocaleString()
+        },
+        {
+            Header: 'Action',
+            accessor: row => <div className='flex justify-between'> <FaEdit/> <FaTrash /> </div>
         },
     ]
 

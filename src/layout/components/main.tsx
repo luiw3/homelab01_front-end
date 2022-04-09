@@ -12,7 +12,7 @@ const Main = (props: {children: ReactNode}) => {
     },[loc.pathname])
 
     return (
-        <section className="h-full row-span-6 lg:col-span-9 col-span-10 bg-slate-600 lg:rounded-lg">
+        <section className="h-full row-span-6 lg:col-start-3 lg:col-span-7 col-span-10 bg-slate-600 lg:rounded-tr-lg lg:rounded-br-lg">
             <Breadcrumb currentPath={state} showAction={state !== 'dashboard'}/>
             <section className="h-[91%]">
                 {props.children}
