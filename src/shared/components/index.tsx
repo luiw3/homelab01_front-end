@@ -1,2 +1,2 @@
-export * from './tables';
-export * from './filter';
+export * from './table/tables';
+export * from './table/filter';

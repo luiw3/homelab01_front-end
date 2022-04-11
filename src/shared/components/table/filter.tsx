@@ -1,5 +1,5 @@
 import React from 'react';
-import { EScreens } from '../enum';
+import { EScreens } from '../../enum';
 
 interface IFilterProps {
     type: EScreens

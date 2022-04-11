@@ -4,7 +4,6 @@ import { TableComponent } from '../../shared/components';
 import { EScreens } from '../../shared/enum';
 import { ICrypto } from '../../shared/interfaces';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-
 export const Cryptos = () => {
     let data: Array<ICrypto> = [{
         fiatValue: 10,

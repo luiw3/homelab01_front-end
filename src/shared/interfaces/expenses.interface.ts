@@ -13,3 +13,5 @@ export interface IExpense {
 export type IExpenseWithUser = IExpense & {
     user: IUser
 }
+
+export type ICreateExpense =  Pick<IExpense,'name' | 'expenseDate' | 'expenseType' | 'paymentMethod' | 'value'>;

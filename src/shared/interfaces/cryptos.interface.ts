@@ -1,3 +1,4 @@
+import { Merge } from "@react-spring/types";
 import { IUser } from "./user.interface";
 
 export interface ICrypto {

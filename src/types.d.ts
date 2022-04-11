@@ -13,3 +13,17 @@ interface AuthenticatedUserAction {
 }
 
 type DispatchAuthenticatedUser = (args: AuthenticatedUserAction) => AuthenticatedUserAction;
+
+type formTypes<T> = {
+    [k in keyof T]: Merge<Pick<T,k>,{}>[k]
+}
+
+type formFields = {
+    label: string;
+    fieldId: string;
+}
+
+type genericForm<T> = {
+    initialValues: formTypes<T>,
+    formFields: Array<formFields>
+}
