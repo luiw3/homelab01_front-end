@@ -18,7 +18,7 @@ const Main = (props: {children: ReactNode}) => {
 
     return (
         <section className="h-full row-span-6 lg:col-start-3 lg:col-span-7 col-span-10 bg-slate-600 lg:rounded-tr-lg lg:rounded-br-lg">
-            <Breadcrumb currentPath={state} showAction={state !== 'dashboard'} goToForm={openForm} isInForm={loc.pathname.includes('/add')}/>
+            <Breadcrumb currentPath={state} showAction={(state !== 'dashboard' && !loc.pathname.includes('/add'))} goToForm={openForm} isInForm={loc.pathname.includes('/add')}/>
             <section className="h-[91%]">
                 {props.children}
             </section>

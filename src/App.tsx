@@ -19,7 +19,13 @@ function App() {
           <Route path="/" element={<BaseLayout/>}>
                 <Route index element={<Dashboard />} />
                 <Route path='cryptos' element={<Cryptos />} />
-                <Route path='cryptos/add' element={<Form type={EScreens.CRYPTO} icon={FaBitcoin} onSubmit={(values) =>  createCrypto(values)}/>}/>
+                <Route path='cryptos/add' 
+                  element={
+                    <Form type={EScreens.CRYPTO} 
+                      icon={FaBitcoin} 
+                      onSubmit={(values) =>  createCrypto(values)}/>
+                  }
+                />
                 <Route path='goals' element={<Goals />} >
                     {/* <Route path='add' element={<Form />} /> */}
                 </Route>
