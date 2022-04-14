@@ -1,15 +1,15 @@
 export enum EExpenseType {
-    RENT = 'RENT',
-    BILLS = 'BILLS',
-    HOUSE = 'HOUSE',
-    TAKEAWAY = 'TAKEAWAY',
-    MARKET = 'MARKET',
-    MISC = 'MISC',
-    LEISURE = 'LEISURE',
-    CATS = 'CATS'
+    RENT,
+    BILLS,
+    HOUSE,
+    TAKEAWAY,
+    MARKET,
+    MISC,
+    LEISURE,
+    CATS
 }
 
 export enum EPaymentMethod {
-    CREDIT = 'CREDIT',
-    DEBIT = 'DEBIT'
+    CREDIT,
+    DEBIT
 }

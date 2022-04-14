@@ -1,5 +1,5 @@
 export enum EScreens {
-    CRYPTO = 'CRYPTO',
+    CRYPTO = 'CRYPTOS',
     EXPENSES = 'EXPENSES',
     GOALS = 'GOALS'
 }
