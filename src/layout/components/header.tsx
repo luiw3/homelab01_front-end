@@ -12,7 +12,7 @@ const Header = () => {
         navigate('/');
     }
     return (
-        <div className="flex justify-between items-center h-full px-6 bg-zinc-800 text-white">
+        <div className="flex justify-between items-center h-full bg-zinc-800 text-white">
                 <div onClick={returnHome} className="flex items-center justify-between"> 
                     <div className="block lg:hidden">
                             <FaBars size='2em'/>

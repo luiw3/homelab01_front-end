@@ -6,7 +6,7 @@ import { createCrypto } from '../../../pages/cryptos/service/crypto-service';
 import { useLocation } from 'react-router-dom';
 import { ISelectOptions } from './formInput';
 
-interface IFormFields {
+export interface IFormFields {
     label: string,
     fieldId: string,
     type: number,
@@ -186,7 +186,7 @@ function generateFormByType (type: EScreens): IFormValues {
                     goal: '',
                     targetDate: new Date().toISOString().substring(0,10),
                     amountNeeded: 0,
-                    needsMoney: undefined,
+                    needsMoney: "false",
                     totalSaved: 0,
                 },
                 validationSchema: Yup.object().shape({
@@ -194,7 +194,6 @@ function generateFormByType (type: EScreens): IFormValues {
                     .required('Please enter the goal name!'),
                     targetDate: Yup.date()
                     .min(new Date(), 'please enter a future date'),
-                    needsMoney: Yup.bool(),
                     amountNeeded: Yup.number()
                     .required('Enter the amount needed'),
                     totalSaved: Yup.number()
@@ -207,6 +206,11 @@ function generateFormByType (type: EScreens): IFormValues {
                     type: 0
                 },
                 {
+                    label: 'Target Date',
+                    fieldId: 'targetDate',
+                    type: 3
+                },
+                {
                     label: 'needs money',
                     fieldId: 'needsMoney',
                     type: 1
@@ -217,14 +221,9 @@ function generateFormByType (type: EScreens): IFormValues {
                     type: 4
                 },
                 {
-                    label: 'totalSaved',
+                    label: 'Total Saved',
                     fieldId: 'totalSaved',
                     type: 4
-                },
-                {
-                    label: 'target date',
-                    fieldId: 'targetDate',
-                    type: 3
                 }
             ],
             onSubmit: (values) => createCrypto(values),

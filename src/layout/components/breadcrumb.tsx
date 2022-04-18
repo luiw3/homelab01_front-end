@@ -19,7 +19,7 @@ const Breadcrumb = ({currentPath, showAction, goToForm, isInForm}: IProps) => {
     const animation = useSpring({to: {x: 1, opacity: 1}, from: {x:-23, opacity: 0}, reset: true})
     const animation1 = useSpring({to: {x: 1, opacity: 1}, from: {x:23, opacity: 0}, reset: true})
     return  (
-        <header className="h-[9%] bg-neutral-400 text-blue-900 lg:rounded-tr-lg flex items-center justify-between pr-4 border-b border-black">
+        <header className="h-[9%] bg-neutral-400 text-blue-900 lg:rounded-tr-lg lg:rounded-tl-lg flex items-center justify-between pr-4 border-b border-black">
             <nav className="basis-3/6 flex pl-3 items-center font-medium">
                 <AnimatedLink to='/' className="text-lg" style={currentPath === 'dashboard' ? animation : {}}>
                     DASHBOARD

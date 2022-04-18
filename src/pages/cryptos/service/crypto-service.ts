@@ -1,4 +1,7 @@
+import httpClient from '../../../axios/axios-client';
+
+const client = new httpClient();
 
 export const createCrypto = (values: any) => {
-    alert(JSON.stringify(values, null, 2));
+    return client.request('post','cryptos');
 }

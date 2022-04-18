@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import { Column, TableInstance, useTable } from "react-table";
+import { TableInstance } from "react-table";
 import { EScreens } from "../../enum";
 import Filter from "./filter";
 
