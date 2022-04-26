@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom'
 import { FaBars, FaUser } from "react-icons/fa";
+import Breadcrumb from "./breadcrumb";
 
 const Header = () => {
-    const navigate = useNavigate();
-    const doLogout = () => {
-        navigate('/login')
-    }
+    const [state,setState] = useState('dashboard');
+    const loc = useLocation();
+    const nav = useNavigate();
 
+    useEffect(() => {
+        setState(loc.pathname === '/' ? 'dashboard' : loc.pathname.split('/')[1])
+    },[loc.pathname])
+
+    const openForm = () => {
+        nav(state + '/add');
+    }
     const returnHome = () => {
-        navigate('/');
+        nav('/');
     }
     return (
         <div className="flex justify-between items-center h-full bg-zinc-800 text-white">
@@ -20,6 +27,7 @@ const Header = () => {
                     <span>
                         A HEADER
                     </span>
+                    <Breadcrumb currentPath={state} showAction={(state !== 'dashboard' && !loc.pathname.includes('/add'))} goToForm={openForm} isInForm={loc.pathname.includes('/add')}/>
                 </div>
                 <div className="flex items-center justify-between">
                     <span> LOGGED USER </span>

@@ -51,7 +51,7 @@ const Form = () => {
         <div className="w-full h-full flex items-center">
             {
                 formik ?
-                    <form className={`w-11/12 m-auto p-12 bg-gray-400 rounded-lg ${height}`} onSubmit={formik.handleSubmit} id="main_form">
+                    <form className={`w-full p-12 rounded-lg ${height}`} onSubmit={formik.handleSubmit} id="main_form">
                         <div className="grid grid-cols-12 grid-rows-6 gap-y-4 gap-x-20 flex-1 items-center w-full h-full">
                             <div className={"col-span-6 row-start-1 row-span-5 self-start"}>
                                 {formFields.map((f) =>
