@@ -9,7 +9,7 @@ import { EScreens } from './shared/enum';
 
 function App() {
   return (
-    <div className='h-screen w-screen bg-zinc-900'>
+    <div className='h-screen w-screen bg-[#27253d]'>
       <Router>
         <Routes>
           <Route path='/login' element={ <Login />} />
@@ -17,18 +17,10 @@ function App() {
           <Route path="/" element={<BaseLayout/>}>
                 <Route index element={<Dashboard />} />
                 <Route path='cryptos' element={<Cryptos />} />
-                <Route path='cryptos/add' 
-                  element={
-                    <Form />
-                  }
-                />
-                <Route path='goals' element={<Goals />} >
-                    {/* <Route path='add' element={<Form />} /> */}
-                </Route>
+                <Route path='cryptos/add' element={<Form />}/>
+                <Route path='goals' element={<Goals />} />
                 <Route path='goals/add' element={<Form />}/>
-                <Route path='expenses' element={<Expenses />} >
-                    {/* <Route path='add' element={<Form />} /> */}
-                </Route>
+                <Route path='expenses' element={<Expenses />} />
                 <Route path='expenses/add' element={<Form />}/>
                 <Route path='profile' element={<Profile />} />
           </Route>

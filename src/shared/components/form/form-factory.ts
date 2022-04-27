@@ -2,9 +2,10 @@ import * as Yup from 'yup';
 import { EScreens } from '../../enum';
 import { FaBitcoin, FaCheckSquare, FaMoneyBill } from 'react-icons/fa';
 import { IconType } from 'react-icons';
-import { createCrypto } from '../../../pages/cryptos/service/crypto-service';
+import { createCrypto } from '../../../pages/cryptos/service/crypto.service';
 import { useLocation } from 'react-router-dom';
 import { ISelectOptions } from './formInput';
+import { CreateCrypto } from '../../../pages/cryptos/interfaces/create-crypto.interface';
 
 export interface IFormFields {
     label: string,
@@ -17,7 +18,7 @@ interface IFormValues {
     initialValues: Object,
     validationSchema: Yup.AnyObjectSchema,
     formFields: Array<IFormFields>,
-    onSubmit: (values: any) => void,
+    onSubmit: (values: any, resetForm: () => void) => void,
     icon: IconType,
     formType: EScreens
 }
@@ -38,15 +39,14 @@ function generateFormByType (type: EScreens): IFormValues {
             return {
                 initialValues: {
                     token: '',
-                    purchasingDate: new Date().toISOString().substring(0,10),
-                    amount: 0,
-                    fiatValue: 0
+                    purchasingDate: '',
+                    amount: '',
+                    fiatValue: ''
                 },
                 validationSchema: Yup.object().shape({
                     token: Yup.string()
                     .required('Please enter token name!'),
-                    purchasingDate: Yup.date()
-                    .default(new Date()),
+                    purchasingDate: Yup.date(),
                     amount: Yup.number()
                     .required('Enter the amount of tokens'),
                     fiatValue: Yup.number()
@@ -74,7 +74,10 @@ function generateFormByType (type: EScreens): IFormValues {
                     type: 4
                 }
             ],
-            onSubmit: (values) => createCrypto(values),
+            onSubmit: (values: CreateCrypto, resetForm: () => void) => {
+                createCrypto(values);
+                resetForm();
+            },
             icon: FaBitcoin,
             formType: EScreens.CRYPTO
         };
@@ -82,9 +85,9 @@ function generateFormByType (type: EScreens): IFormValues {
             return  {
                 initialValues: {
                     name: '',
-                    expenseDate: new Date().toISOString().substring(0,10),
-                    expenseType: undefined,
-                    paymentMethod: undefined,
+                    expenseDate: '',
+                    expenseType: '',
+                    paymentMethod: '',
                     value: 0,
                     isRecurrent: false
                 },
@@ -176,7 +179,10 @@ function generateFormByType (type: EScreens): IFormValues {
                     type: 4
                 }
             ],
-            onSubmit: (values) => createCrypto(values),
+            onSubmit: (values: CreateCrypto, resetForm: () => void) => {
+                createCrypto(values);
+                resetForm();
+            },
             icon: FaMoneyBill,
             formType: EScreens.EXPENSES
         }
@@ -184,7 +190,7 @@ function generateFormByType (type: EScreens): IFormValues {
             return {
                 initialValues: {
                     goal: '',
-                    targetDate: new Date().toISOString().substring(0,10),
+                    targetDate: '',
                     amountNeeded: 0,
                     needsMoney: "false",
                     totalSaved: 0,
@@ -226,7 +232,10 @@ function generateFormByType (type: EScreens): IFormValues {
                     type: 4
                 }
             ],
-            onSubmit: (values) => createCrypto(values),
+            onSubmit: (values: CreateCrypto, resetForm: () => void) => {
+                createCrypto(values);
+                resetForm();
+            },
             icon: FaCheckSquare,
             formType: EScreens.GOALS
         }

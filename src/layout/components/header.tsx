@@ -12,22 +12,19 @@ const Header = () => {
         setState(loc.pathname === '/' ? 'dashboard' : loc.pathname.split('/')[1])
     },[loc.pathname])
 
-    const openForm = () => {
-        nav(state + '/add');
-    }
     const returnHome = () => {
         nav('/');
     }
     return (
-        <div className="flex justify-between items-center h-full bg-zinc-800 text-white">
+        <div className="flex justify-between items-center h-full bg-[#1a1829] text-white p-2">
                 <div onClick={returnHome} className="flex items-center justify-between"> 
                     <div className="block lg:hidden">
-                            <FaBars size='2em'/>
+                        <FaBars size='2em'/>
                     </div>
                     <span>
                         A HEADER
                     </span>
-                    <Breadcrumb currentPath={state} showAction={(state !== 'dashboard' && !loc.pathname.includes('/add'))} goToForm={openForm} isInForm={loc.pathname.includes('/add')}/>
+                    <Breadcrumb currentPath={state} />
                 </div>
                 <div className="flex items-center justify-between">
                     <span> LOGGED USER </span>

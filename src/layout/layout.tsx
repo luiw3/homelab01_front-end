@@ -13,7 +13,7 @@ export const BaseLayout = () => {
                 <header className="col-span-13 col-start-2 max-h-14 mb-3 w-full" style={{ border: "1px solid black" }}>
                     <Header />
                 </header>
-                <aside className="justify-self-start row-start-1 row-span-full max-w-xs hidden lg:block rounded-tl-lg rounded-bl-lg bg-zinc-800">
+                <aside className="justify-self-start row-start-1 row-span-full max-w-xs hidden lg:block rounded-tl-lg rounded-bl-lg bg-[#1a1829]">
                     <Navigation />
                 </aside>
                 <Main>

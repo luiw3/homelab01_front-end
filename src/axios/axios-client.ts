@@ -19,7 +19,8 @@ export default class httpClient {
         try {
             return await this._httpClient.request({
                 method: (type as Method),
-                url: API_URL + endpoint
+                url: API_URL + endpoint,
+                data: body || {}
             })
         }
         catch {

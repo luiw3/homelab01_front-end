@@ -26,10 +26,9 @@ const Form = () => {
     let formik = useFormik({
         initialValues,
         validationSchema,
-        onSubmit: values => onSubmit(values),
+        onSubmit: (values,{resetForm}) => onSubmit(values, resetForm),
         validateOnChange: true
     });
-
 
     useEffect(() => {
         if ((formik.values as any).needsMoney && (formik.values as any).needsMoney !== 'false') {
@@ -38,22 +37,19 @@ const Form = () => {
         else {
             setState(true);
         }
-    }, [formik.values])
+    }, [formik.values, formik.isSubmitting])
 
     const cancelButton = () => {
         nav('/' + loc.pathname.split('/')[1]);
     }
 
-
-    const height = formType === EScreens.EXPENSES ? 'h-[97%]'
-        : formType === EScreens.CRYPTO ? 'h-[80%]' : 'h-[84%]';
     return (
-        <div className="w-full h-full flex items-center">
+        <div className="w-10/12 h-full flex items-center m-auto row-span-4">
             {
                 formik ?
-                    <form className={`w-full p-12 rounded-lg ${height}`} onSubmit={formik.handleSubmit} id="main_form">
-                        <div className="grid grid-cols-12 grid-rows-6 gap-y-4 gap-x-20 flex-1 items-center w-full h-full">
-                            <div className={"col-span-6 row-start-1 row-span-5 self-start"}>
+                    <form className={`w-full py-7 px-4 rounded-lg h-full text-white`} onSubmit={formik.handleSubmit} id="main_form">
+                        <div className="grid grid-cols-12 grid-rows-6 gap-y-4 gap-x-20 flex-1 items-center w-full h-full ">
+                            <div className={"col-span-6 row-start-1 row-span-5 self-center "}>
                                 {formFields.map((f) =>
                                     !(formType === EScreens.GOALS &&
                                         (f.fieldId === 'amountNeeded' || f.fieldId === 'totalSaved')) ?
@@ -103,12 +99,12 @@ const Form = () => {
                             <div className="col-span-6 row-span-5 flex items-center justify-center">
                                 <AnimatedIcon style={animation} size="10em" />
                             </div>
-                            <div className={"col-span-12 row-start-6 row-span-1 flex justify-center items-end self-end"}>
+                            <div className={"col-span-12 row-start-6 row-span-1 flex justify-center items-end self-end mb-6"}>
                                 <div className="w-2/6 flex justify-around">
-                                    <button type="button" onClick={cancelButton} className="text-white bg-[#ff0000] hover:bg-red-600 shadow-sm shadow-gray-900 transition ease-in-out duration-500 hover:text-neutral-900 rounded-md py-1 w-5/12 h-full flex items-center justify-center">
+                                    <button type="button" onClick={cancelButton} className="text-white bg-zinc-800 hover:bg-zinc-600 shadow-sm shadow-gray-900 transition ease-in-out duration-500 hover:text-neutral-900 rounded-md py-1 w-5/12 h-full flex items-center justify-center">
                                         CANCEL
                                     </button>
-                                    <button type="submit" className="text-white bg-[#02a107] hover:bg-green-600 shadow-sm shadow-gray-900 transition ease-in-out duration-500 hover:text-neutral-900 rounded-md py-1 w-5/12 h-full flex items-center justify-center">
+                                    <button type="submit" className="text-white bg-[#0048ff] hover:bg-sky-600 shadow-sm shadow-gray-900 transition ease-in-out duration-500 hover:text-neutral-900 rounded-md py-1 w-5/12 h-full flex items-center justify-center">
                                         SAVE
                                     </button>
                                 </div>

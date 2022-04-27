@@ -62,7 +62,7 @@ const FormInput = ({
                 <option value=''>SELECT</option>
 
                 {selectOptions?.map(so => (
-                    <option value={so.value}>{so.label}</option>
+                    <option key={so.label + '_' + so.value} value={so.value}>{so.label}</option>
                 ))}
             </select>
         case EInputType.number:
